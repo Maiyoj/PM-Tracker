@@ -25,7 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_09_045426) do
     t.string "description"
     t.string "priority"
     t.string "enviroment"
-    t.string "type"
+    t.string "category"
     t.string "status"
     t.string "comment"
     t.integer "user_id"
