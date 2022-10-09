@@ -5,7 +5,8 @@ import LoginForm from "./components/LoginForm";
 function App() {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
+      <LoginForm />
 
       {/* 
       <Routes>
