@@ -1,10 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import LoginForm from "./components/LoginForm";
 
 function App() {
   return (
     <div>
       <Navbar />
+
       {/* 
       <Routes>
         <Route exact path="/" element={<Home />} />
