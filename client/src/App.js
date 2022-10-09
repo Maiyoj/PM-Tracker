@@ -2,6 +2,8 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import LoginForm from "./components/LoginForm";
 import { useEffect, useState } from "react";
+import User from "./components/User";
+import Main from "./components/Main";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -17,15 +19,10 @@ function App() {
   return (
     <div>
       <Navbar user={user} setUser={setUser} />
-
-      {/* 
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/about" element={<About />} />
-        <Route exact path="/games" element={<Games />} />
-        <Route exact path="/games/:gameID" element={<Game />} />
-        <Route exact path="/profile" element={<Profile />} />
-      </Routes> */}
+        <Route exact path="/" element={<Main />} />
+        <Route exact path="/users" element={<User />} />
+      </Routes>
     </div>
   );
 }
