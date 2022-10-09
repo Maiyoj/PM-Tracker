@@ -22,47 +22,18 @@ function Navbar({ user, setUser }) {
                 <i className="fas fa-tachometer-alt fa-fw me-3"></i>
                 <span>Main dashboard</span>
               </a>
-              <a
-                href="#"
-                className="list-group-item list-group-item-action py-2 ripple active">
-                <i className="fas fa-chart-area fa-fw me-3"></i>
-                <span>Webiste traffic</span>
-              </a>
-              <a
-                href="#"
-                className="list-group-item list-group-item-action py-2 ripple">
-                <i className="fas fa-lock fa-fw me-3"></i>
-                <span>Password</span>
-              </a>
+
               <a
                 href="#"
                 className="list-group-item list-group-item-action py-2 ripple">
                 <i className="fas fa-chart-line fa-fw me-3"></i>
-                <span>Analytics</span>
-              </a>
-              <a
-                href="#"
-                className="list-group-item list-group-item-action py-2 ripple">
-                <i className="fas fa-chart-pie fa-fw me-3"></i>
-                <span>SEO</span>
-              </a>
-              <a
-                href="#"
-                className="list-group-item list-group-item-action py-2 ripple">
-                <i className="fas fa-chart-bar fa-fw me-3"></i>
-                <span>Orders</span>
-              </a>
-              <a
-                href="#"
-                className="list-group-item list-group-item-action py-2 ripple">
-                <i className="fas fa-globe fa-fw me-3"></i>
-                <span>International</span>
+                <span>Projects</span>
               </a>
               <a
                 href="#"
                 className="list-group-item list-group-item-action py-2 ripple">
                 <i className="fas fa-building fa-fw me-3"></i>
-                <span>Partners</span>
+                <span>Clients</span>
               </a>
               <a
                 href="#"
@@ -80,7 +51,7 @@ function Navbar({ user, setUser }) {
                 href="#"
                 className="list-group-item list-group-item-action py-2 ripple">
                 <i className="fas fa-money-bill fa-fw me-3"></i>
-                <span>Sales</span>
+                <span>Tickets</span>
               </a>
             </div>
           </div>
@@ -168,72 +139,6 @@ function Navbar({ user, setUser }) {
                   <i className="fab fa-github"></i>
                 </a>
               </li>
-
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow"
-                  href="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-mdb-toggle="dropdown"
-                  aria-expanded="false">
-                  <i className="united kingdom flag m-0"></i>
-                </a>
-                <ul
-                  className="dropdown-menu dropdown-menu-end"
-                  aria-labelledby="navbarDropdown">
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      <i className="united kingdom flag"></i>English
-                      <i className="fa fa-check text-success ms-2"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <hr className="dropdown-divider" />
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      <i className="poland flag"></i>Polski
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      <i className="china flag"></i>中文
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      <i className="japan flag"></i>日本語
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      <i className="germany flag"></i>Deutsch
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      <i className="france flag"></i>Français
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      <i className="spain flag"></i>Español
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      <i className="russia flag"></i>Русский
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      <i className="portugal flag"></i>Português
-                    </a>
-                  </li>
-                </ul>
-              </li>
-
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle hidden-arrow d-flex align-items-center"
