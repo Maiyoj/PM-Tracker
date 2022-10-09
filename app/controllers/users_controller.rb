@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def index
     @users = User.all
 
-    render json: @users
+    render json: @users.joins(:tickets, :projects).select('users.*,tickets.*,projects.*')
   end
 
   # GET /users/1
