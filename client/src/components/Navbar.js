@@ -1,5 +1,12 @@
 import { Fragment } from "react";
-function Navbar() {
+function Navbar({ user, setUser }) {
+  function handleLogoutClick() {
+    fetch("/logout", { method: "DELETE" }).then((r) => {
+      if (r.ok) {
+        setUser(null);
+      }
+    });
+  }
   return (
     <Fragment>
       <header>
@@ -257,7 +264,7 @@ function Navbar() {
                     </a>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">
+                    <a className="dropdown-item" onClick={handleLogoutClick}>
                       Logout
                     </a>
                   </li>
