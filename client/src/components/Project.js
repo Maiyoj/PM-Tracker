@@ -1,4 +1,5 @@
 import { Fragment, useEffect, useState } from "react";
+import ProjectForm from "./ProjectForm";
 function Project() {
   const [tickets, setTickets] = useState([]);
   useEffect(() => {
@@ -13,6 +14,7 @@ function Project() {
     <Fragment>
       <main style={{ marginTop: "58px" }}>
         <div className="container pt-4"></div>
+        <ProjectForm/>
         <div className="container pt-4">
           <table className="table align-middle mb-0 bg-white table-bordered">
             <thead className="bg-secondary text-white">
