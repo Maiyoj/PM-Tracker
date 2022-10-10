@@ -9,7 +9,6 @@ function LoginForm({ onLogin }) {
   // handleonchangedata
   function onChangeValue(e) {
     setFormData({
-      ...formData,
       [e.target.name]: e.target.value,
     });
   }

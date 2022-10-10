@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 import User from "./components/User";
 import Main from "./components/Main";
 
-function App() {
-  const [user, setUser] = useState(null);
+function App({}) {
+  const [user, setUser] = useState("");
   useEffect(() => {
     fetch("/me").then((r) => {
       {
