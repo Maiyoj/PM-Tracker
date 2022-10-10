@@ -87,7 +87,7 @@ function LoginForm({ onLogin }) {
             </div>
             <button
               type="submit"
-              onSubmit={handleSubmit}
+              onClick={handleSubmit}
               className="btn btn-primary">
               Submit
             </button>

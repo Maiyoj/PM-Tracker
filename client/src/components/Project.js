@@ -9,12 +9,16 @@ function Project() {
         setTickets(ticks);
       });
   }, []);
+  function getTickets(newTicketsRecived){
+    const updateTickets =[...tickets, newTicketsRecived] 
+    setTickets(updateTickets)
 
+}
   return (
     <Fragment>
       <main style={{ marginTop: "58px" }}>
         <div className="container pt-4"></div>
-        <ProjectForm/>
+        <ProjectForm getTickets={getTickets}/>
         <div className="container pt-4">
           <table className="table align-middle mb-0 bg-white table-bordered">
             <thead className="bg-secondary text-white">
