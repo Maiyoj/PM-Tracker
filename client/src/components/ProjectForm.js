@@ -1,5 +1,25 @@
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 function ProjectForm() {
+  // get projects
+  const [projects, setProject] = useState([]);
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    fetch("/projects")
+      .then((res) => res.json())
+      .then((project) => {
+        setProject(project);
+      });
+  }, []);
+
+  // get users
+  useEffect(() => {
+    fetch("/users")
+      .then((res) => res.json())
+      .then((user) => {
+        setUsers(user);
+      });
+  }, []);
+
   return (
     <Fragment>
       <div className="container">
@@ -7,10 +27,11 @@ function ProjectForm() {
           <h1>Create Ticket</h1>
           <form className="border rounded-top p-3">
             <select className="form-select" aria-label="Default select example">
-              <option selected>Prject Name</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+              {projects.map((project) => (
+                <option key={project.id} value={project.projectname}>
+                  {project.projectname}
+                </option>
+              ))}
             </select>
             <div className="">
               <label className="form-label">Description</label>
@@ -28,7 +49,7 @@ function ProjectForm() {
                 aria-describedby="emailHelp"
                 name="enviroment"
               />
-            </div>{" "}
+            </div>
             <div className="mb-3">
               <label className="form-label">Category</label>
               <input
@@ -39,12 +60,9 @@ function ProjectForm() {
                 name="enviroment"
               />
             </div>
-            <select className="form-select" aria-label="Default select example">
-              <option selected>Status</option>
-              <option value="1">Open</option>
-              <option value="2">Inprogress</option>
-              <option value="3">Done</option>
-            </select>
+            <select
+              className="form-select"
+              aria-label="Default select example"></select>
             <div className="mb-3">
               <label className="form-label">Comment</label>
               <input
@@ -56,10 +74,11 @@ function ProjectForm() {
               />
             </div>
             <select className="form-select" aria-label="Default select example">
-              <option selected>Assigned To</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+              {users.map((user) => (
+                <option key={user.id} value={user.name}>
+                  {user.name}
+                </option>
+              ))}
             </select>
             <button type="submit" className="btn btn-primary mt-2">
               Submit
