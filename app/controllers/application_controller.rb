@@ -3,8 +3,6 @@ class ApplicationController < ActionController::API
    
   rescue_from ActiveRecord::RecordInvalid, with: :entity_unread
 
-  before_action :authorize
-
   private
 
   def authorize

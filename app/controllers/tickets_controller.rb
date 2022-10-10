@@ -3,7 +3,7 @@ class TicketsController < ApplicationController
 
   # GET /tickets
   def index
-    @tickets = Ticket.all
+    @tickets = Ticket.includes(:user, :project)
 
     render json: @tickets
   end
