@@ -4,6 +4,7 @@ import LoginForm from "./components/LoginForm";
 import { useEffect, useState } from "react";
 import User from "./components/User";
 import Main from "./components/Main";
+import Project from "./components/Project";
 
 function App({}) {
   const [user, setUser] = useState("");
@@ -22,6 +23,7 @@ function App({}) {
       <Routes>
         <Route exact path="/" element={<Main />} />
         <Route exact path="/users" element={<User />} />
+        <Route exact path="/projects" element={<Project />} />
       </Routes>
     </div>
   );

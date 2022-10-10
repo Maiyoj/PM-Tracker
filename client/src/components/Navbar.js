@@ -50,12 +50,12 @@ function Navbar({ user, setUser }) {
                 <i className="fas fa-users fa-fw me-3"></i>
                 <span>Users</span>
               </Link>
-              <a
-                href="#"
+              <Link
+                to={"/projects"}
                 className="list-group-item list-group-item-action py-2 ripple">
                 <i className="fas fa-money-bill fa-fw me-3"></i>
                 <span>Tickets</span>
-              </a>
+              </Link>
             </div>
           </div>
         </nav>
