@@ -79,6 +79,11 @@ function Project() {
                         className="btn btn-link btn-sm btn-rounded">
                         Edit
                       </button>
+                      <button
+                        type="button"
+                        className="btn btn-link btn-sm btn-rounded">
+                        Delete
+                      </button>
                     </td>
                   </tr>
                 );
