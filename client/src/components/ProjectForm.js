@@ -3,6 +3,18 @@ function ProjectForm() {
   // get projects
   const [projects, setProject] = useState([]);
   const [users, setUsers] = useState([]);
+  // const [ticketData, seTickets] = ({
+  //   projectname:"",
+  //   description:"",
+  //   priority:"",
+  //   enviroment:"",
+  //   category:"",
+  //   status:"",
+  //   comment:"",
+  //   user:""
+
+  // })
+
   useEffect(() => {
     fetch("/projects")
       .then((res) => res.json())
@@ -40,6 +52,13 @@ function ProjectForm() {
                 id="textAreaExample"
                 rows="4"></textarea>
             </div>
+            <div className="">
+              <label className="form-label">Priority</label>
+              <textarea
+                className="form-control"
+                id="textAreaExample"
+                rows="4"></textarea>
+            </div>
             <div className="mb-3">
               <label className="form-label">Enviroment</label>
               <input
@@ -60,9 +79,11 @@ function ProjectForm() {
                 name="enviroment"
               />
             </div>
-            <select
-              className="form-select"
-              aria-label="Default select example"></select>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Status</option>
+              <option value="1">Open</option>
+              <option value="2">Done</option>
+            </select>
             <div className="mb-3">
               <label className="form-label">Comment</label>
               <input
@@ -73,9 +94,10 @@ function ProjectForm() {
                 name="enviroment"
               />
             </div>
+
             <select className="form-select" aria-label="Default select example">
               {users.map((user) => (
-                <option key={user.id} value={user.name}>
+                <option key={user.id} value={user.name} name="name">
                   {user.name}
                 </option>
               ))}
