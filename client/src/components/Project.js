@@ -14,7 +14,7 @@ function Project() {
       <main style={{ marginTop: "58px" }}>
         <div className="container pt-4"></div>
         <div className="container pt-4">
-          <table className="table align-middle mb-0 bg-white table-bordered" >
+          <table className="table align-middle mb-0 bg-white table-bordered">
             <thead className="bg-secondary text-white">
               <tr>
                 <th>Description</th>
@@ -49,6 +49,7 @@ function Project() {
                     <td>
                       <p className="fw-normal mb-1">{ticket.category}</p>
                     </td>
+
                     <td>
                       <p className="fw-normal mb-1">{ticket.status}</p>
                     </td>

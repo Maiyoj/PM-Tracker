@@ -21,7 +21,7 @@ function App({}) {
     <div>
       <Navbar user={user} setUser={setUser} />
       <Routes>
-        <Route exact path="/" element={<Main />} />
+        <Route exact path="/" element={<Project />} />
         <Route exact path="/users" element={<User />} />
         <Route exact path="/projects" element={<Project />} />
       </Routes>
