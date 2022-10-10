@@ -2,6 +2,7 @@ import { Fragment, useEffect, useState } from "react";
 import ProjectForm from "./ProjectForm";
 function Project() {
   const [tickets, setTickets] = useState([]);
+  const [isAdding, setIsAdding] = useState(false)
   useEffect(() => {
     fetch("/tickets")
       .then((res) => res.json())
@@ -17,8 +18,14 @@ function Project() {
   return (
     <Fragment>
       <main style={{ marginTop: "58px" }}>
-        <div className="container pt-4"></div>
+        <div className="container pt-4">
+        <button type="button" onClick={() => setIsAdding((isAdding) => !isAdding)} className="btn btn-primary ms-8 my-2">Create Ticket</button>
+        {isAdding?(
         <ProjectForm getTickets={getTickets}/>
+        ):
+        (
+         null  
+        )}
         <div className="container pt-4">
           <table className="table align-middle mb-0 bg-white table-bordered">
             <thead className="bg-secondary text-white">
@@ -78,6 +85,7 @@ function Project() {
               })}
             </tbody>
           </table>
+        </div>
         </div>
       </main>
     </Fragment>
