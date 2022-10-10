@@ -23,14 +23,14 @@ function ProjectForm({getTickets}) {
   function handleSubmit(e) {
     e.preventDefault();
     const createdTickets = {
-      project: ticketData.projectname,
+      project_id: ticketData.user_id,
       description: ticketData.description,
       priority: ticketData.priority,
       enviroment: ticketData.enviroment,
       category: ticketData.category,
       status: ticketData.status,
       comment: ticketData.comment,
-      user: ticketData.name,
+      user_id: ticketData.user_id,
     };
 
     fetch("/tickets", {
@@ -43,16 +43,17 @@ function ProjectForm({getTickets}) {
       .then((res) => res.json())
       .then((newTicket) => {
         getTickets(newTicket)
+        console.log(ticketData)
         setTickets({
           ...ticketData,
-          project: "",
+          project_id: "",
           description: "",
           priority: "",
           enviroment: "",
           category: "",
           status: "",
           comment: "",
-          user: "",
+          user_id: "",
         });
       });
   }
@@ -83,11 +84,11 @@ function ProjectForm({getTickets}) {
             <select
               className="form-select"
               aria-label="Default select example"
-              name="projectname"
-              value={ticketData.project}
+              name="project_id"
+              // value={project.id}
               onChange={onDataChange}>
               {projects.map((project) => (
-                <option key={project.id} value={project.projectname}>
+                <option key={project.id} value={project.id}>
                   {project.projectname}
                 </option>
               ))}
@@ -162,11 +163,11 @@ function ProjectForm({getTickets}) {
             <select
               className="form-select"
               aria-label="Default select example"
-              name="name"
-              value={ticketData.user}
+              name="user_id"
+              value={ticketData.user_id}
               onChange={onDataChange}>
               {users.map((user) => (
-                <option key={user.id} value={user.name} name="name">
+                <option key={user.id} value={user.id} >
                   {user.name}
                 </option>
               ))}
