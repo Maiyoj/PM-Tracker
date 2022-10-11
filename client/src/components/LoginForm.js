@@ -10,7 +10,8 @@ function LoginForm({ onLogin }) {
   // handleonchangedata
   function onChangeValue(e) {
     setFormData({
-      ...formData, [e.target.name]: e.target.value,
+      ...formData,
+      [e.target.name]: e.target.value,
     });
   }
 
@@ -45,23 +46,13 @@ function LoginForm({ onLogin }) {
       }
     });
   }
-  // .then((res) => res.json())
-  // .then((user) => {
-  //   onLogin(user);
-  //   setFormData({
-  //     ...formData,
-  //     name: "",
-  //     email: "",
-  //     password: "",
-  //   });
-  // });
 
   return (
     <Fragment>
-      <div className="container">
-        <div className="row g-3">
+      <div className="container w-50 mt-4 card card-body py-5 px-md-5">
+        <div className="row">
           <h1>LoginForm</h1>
-          <form>
+          <form className="w-60">
             <div className="mb-3">
               <label className="form-label">Name</label>
               <input
@@ -105,11 +96,11 @@ function LoginForm({ onLogin }) {
               className="btn btn-primary">
               Submit
             </button>
-            {/* <form>
+            <form className="bg-danger  w-5 mt-2">
               {errors.map((err) => (
                 <p key={err}>{err}</p>
               ))}
-            </form> */}
+            </form>
           </form>
         </div>
       </div>
