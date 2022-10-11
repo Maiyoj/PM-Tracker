@@ -1,5 +1,7 @@
-import { Fragment, useEffect, useState } from "react";
-function ProjectForm({getTickets}) {
+import { Fragment, useState, useEffect } from "react";
+import {useParams} from "react-router-dom"
+function EditTicket({handleUpdateTicket, id, }) {
+  let params = useParams();
   // get projects
   const [projects, setProject] = useState([]);
   const [users, setUsers] = useState([]);
@@ -23,7 +25,7 @@ function ProjectForm({getTickets}) {
   function handleSubmit(e) {
     e.preventDefault();
     const createdTickets = {
-      project_id: ticketData.user_id,
+      project_id: ticketData.project_id,
       description: ticketData.description,
       priority: ticketData.priority,
       enviroment: ticketData.enviroment,
@@ -33,8 +35,8 @@ function ProjectForm({getTickets}) {
       user_id: ticketData.user_id,
     };
 
-    fetch("/tickets", {
-      method: "POST",
+    fetch(`/tickets/${params.id}`, {
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
@@ -42,8 +44,7 @@ function ProjectForm({getTickets}) {
     })
       .then((res) => res.json())
       .then((newTicket) => {
-        getTickets(newTicket)
-        console.log(ticketData)
+       handleUpdateTicket (newTicket);
         setTickets({
           ...ticketData,
           project_id: "",
@@ -79,7 +80,7 @@ function ProjectForm({getTickets}) {
     <Fragment>
       <div className="container">
         <div className="row g-3">
-          <h1>Create Ticket</h1>
+          <h1>Update Ticket</h1>
           <form className="border rounded-top p-3">
             <select
               className="form-select"
@@ -167,15 +168,16 @@ function ProjectForm({getTickets}) {
               value={ticketData.user_id}
               onChange={onDataChange}>
               {users.map((user) => (
-                <option key={user.id} value={user.id} >
+                <option key={user.id} value={user.id}>
                   {user.name}
                 </option>
               ))}
             </select>
             <button
               type="submit"
+              value="save"
               className="btn btn-primary mt-2"
-              onClick={handleSubmit}>
+              onSubmit={handleSubmit}>
               Submit
             </button>
           </form>
@@ -184,4 +186,4 @@ function ProjectForm({getTickets}) {
     </Fragment>
   );
 }
-export default ProjectForm;
+export default EditTicket;

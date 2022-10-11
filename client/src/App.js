@@ -5,8 +5,9 @@ import { useEffect, useState } from "react";
 import User from "./components/User";
 import Main from "./components/Main";
 import Project from "./components/Project";
+import EditTicket from "./components/EditTicket";
 
-function App({}) {
+function App() {
   const [user, setUser] = useState("");
   useEffect(() => {
     fetch("/me").then((r) => {
@@ -24,6 +25,7 @@ function App({}) {
         <Route exact path="/" element={<Project />} />
         <Route exact path="/users" element={<User />} />
         <Route exact path="/projects" element={<Project />} />
+        <Route exact path="/projects/:id" element={<EditTicket />} />
       </Routes>
     </div>
   );
