@@ -5,12 +5,12 @@ function LoginForm({ onLogin }) {
     email: "",
     password: "",
   });
-const [errors, setErrors] = useState([])
+  const [errors, setErrors] = useState([]);
 
   // handleonchangedata
   function onChangeValue(e) {
     setFormData({
-      [e.target.name]: e.target.value,
+      ...formData, [e.target.name]: e.target.value,
     });
   }
 
@@ -22,41 +22,39 @@ const [errors, setErrors] = useState([])
       email: formData.email,
       password: formData.password,
     };
-    
-    fetch("/login", {
+
+    fetch("login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(logInUser),
-    })
-
-    .then((r) => {
-    if (r.ok) {
-      r.json().then((user) =>{ onLogin(user)
-        setFormData({
-              ...formData,
-              name: "",
-              email: "",
-              password: "",
-            });
-      });
-    } else {
-      r.json().then((err) => setErrors(err.errors));
-    }
+    }).then((r) => {
+      if (r.ok) {
+        r.json().then((user) => {
+          onLogin(user);
+          setFormData({
+            ...formData,
+            name: "",
+            email: "",
+            password: "",
+          });
+        });
+      } else {
+        r.json().then((err) => setErrors(err.errors));
+      }
     });
-}
-      // .then((res) => res.json())
-      // .then((user) => {
-      //   onLogin(user);
-      //   setFormData({
-      //     ...formData,
-      //     name: "",
-      //     email: "",
-      //     password: "",
-      //   });
-      // });
-  
+  }
+  // .then((res) => res.json())
+  // .then((user) => {
+  //   onLogin(user);
+  //   setFormData({
+  //     ...formData,
+  //     name: "",
+  //     email: "",
+  //     password: "",
+  //   });
+  // });
 
   return (
     <Fragment>
@@ -68,7 +66,6 @@ const [errors, setErrors] = useState([])
               <label className="form-label">Name</label>
               <input
                 className="form-control"
-                id="exampleInputName"
                 aria-describedby="emailHelp"
                 name="name"
                 value={formData.name}
@@ -83,7 +80,6 @@ const [errors, setErrors] = useState([])
               <input
                 type="email"
                 className="form-control"
-                id="exampleInputEmail1"
                 aria-describedby="emailHelp"
                 name="email"
                 value={formData.email}
@@ -98,7 +94,6 @@ const [errors, setErrors] = useState([])
               <input
                 type="password"
                 className="form-control"
-                id="exampleInputPassword1"
                 name="password"
                 value={formData.password}
                 onChange={onChangeValue}
@@ -110,6 +105,11 @@ const [errors, setErrors] = useState([])
               className="btn btn-primary">
               Submit
             </button>
+            {/* <form>
+              {errors.map((err) => (
+                <p key={err}>{err}</p>
+              ))}
+            </form> */}
           </form>
         </div>
       </div>
