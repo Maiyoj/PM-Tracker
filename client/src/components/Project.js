@@ -41,12 +41,6 @@ function Project() {
 
   // }
 
-   
-
-  
-   
-
-
   return (
     <Fragment>
       <main style={{ marginTop: "58px" }}>

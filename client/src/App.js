@@ -8,14 +8,14 @@ import Project from "./components/Project";
 import EditTicket from "./components/EditTicket";
 
 function App() {
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState(null);
   useEffect(() => {
     fetch("/me").then((r) => {
-      {
+      if (r.ok) {
         r.json().then((user) => setUser(user));
       }
     });
-  }, []);
+  }, []);;
 
   if (!user) return <LoginForm onLogin={setUser} />;
   return (

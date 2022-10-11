@@ -32,6 +32,7 @@ function LoginForm({ onLogin }) {
       .then((user) => {
         onLogin(user);
         setFormData({
+          ...formData,
           name: "",
           email: "",
           password: "",
@@ -44,7 +45,7 @@ function LoginForm({ onLogin }) {
       <div className="container">
         <div className="row g-3">
           <h1>LoginForm</h1>
-          <form   onSubmit={handleSubmit}>
+          <form>
             <div className="mb-3">
               <label className="form-label">Name</label>
               <input
@@ -87,7 +88,7 @@ function LoginForm({ onLogin }) {
             </div>
             <button
               type="submit"
-            
+              onClick={handleSubmit}
               className="btn btn-primary">
               Submit
             </button>
