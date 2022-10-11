@@ -5,6 +5,7 @@ function LoginForm({ onLogin }) {
     email: "",
     password: "",
   });
+const [errors, setErrors] = useState([])
 
   // handleonchangedata
   function onChangeValue(e) {
@@ -21,6 +22,7 @@ function LoginForm({ onLogin }) {
       email: formData.email,
       password: formData.password,
     };
+    
     fetch("/login", {
       method: "POST",
       headers: {
@@ -28,17 +30,33 @@ function LoginForm({ onLogin }) {
       },
       body: JSON.stringify(logInUser),
     })
-      .then((res) => res.json())
-      .then((user) => {
-        onLogin(user);
+
+    .then((r) => {
+    if (r.ok) {
+      r.json().then((user) =>{ onLogin(user)
         setFormData({
-          ...formData,
-          name: "",
-          email: "",
-          password: "",
-        });
+              ...formData,
+              name: "",
+              email: "",
+              password: "",
+            });
       });
-  }
+    } else {
+      r.json().then((err) => setErrors(err.errors));
+    }
+    });
+}
+      // .then((res) => res.json())
+      // .then((user) => {
+      //   onLogin(user);
+      //   setFormData({
+      //     ...formData,
+      //     name: "",
+      //     email: "",
+      //     password: "",
+      //   });
+      // });
+  
 
   return (
     <Fragment>

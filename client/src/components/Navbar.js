@@ -48,7 +48,7 @@ function Navbar({ user, setUser }) {
                 to={"/users"}
                 exact="true">
                 <i className="fas fa-users fa-fw me-3"></i>
-                <span>Users</span>
+                <span>Team Members</span>
               </Link>
               <Link
                 to={"/projects"}
