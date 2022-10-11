@@ -17,6 +17,7 @@ function Project() {
     const updateTickets = [...tickets, newTicketsRecived];
     setTickets(updateTickets);
   }
+
   function handleUpdateTicket(updatedTickets) {
     const updatedTicks = tickets.map((ticket) => {
       if (ticket.id === updatedTickets.id) {
@@ -28,22 +29,23 @@ function Project() {
     setTickets(updatedTicks);
   }
 
-  // Delete Function
+  // // Delete Function
   // function handleDeleteClick(id) {
   //   fetch(`/tickets/${id}`, {
   //     method: "DELETE",
   //   })
-  //  handleDelete(id)
+  //  const updatedTickets = tickets.filter(
+  //   (ticket) => ticket.id !== id
+  // );
+  // setTickets(updatedTickets);
 
   // }
 
-  //  function handleDelete() {
-  //     const updatedTickets = tickets.filter(
-  //       (ticket) => ticket.id !== ticket.id
-  //     );
+   
 
-  //     setTickets(updatedTickets);
-  //   }
+  
+   
+
 
   return (
     <Fragment>
@@ -118,6 +120,7 @@ function Project() {
 
                         <button
                           type="button"
+                          // onClick={handleDeleteClick(ticket.id)}
                           className="btn btn-link btn-sm btn-rounded text-danger">
                           Delete
                         </button>
