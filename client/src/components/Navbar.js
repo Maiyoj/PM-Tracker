@@ -24,7 +24,6 @@ function Navbar({ user, setUser }) {
                 <span>Main dashboard</span>
               </Link>
               <a
-                href="#"
                 className="list-group-item list-group-item-action py-2 ripple">
                 <i className="fas fa-chart-line fa-fw me-3"></i>
                 <span>Projects</span>
@@ -62,7 +61,7 @@ function Navbar({ user, setUser }) {
 
         <nav
           id="main-navbar"
-          className="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+          className="navbar navbar-expand-lg navbar-light bg-primary text-white fixed-top">
           <div className="container-fluid">
             <button
               className="navbar-toggler"
@@ -116,9 +115,10 @@ function Navbar({ user, setUser }) {
                   role="button"
                   data-mdb-toggle="dropdown"
                   aria-expanded="false">
+                  
                   <img
                     src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg"
-                    className="rounded-circle"
+                    className="rounded-circle "
                     height="22"
                     alt=""
                     loading="lazy"
@@ -128,12 +128,12 @@ function Navbar({ user, setUser }) {
                   className="dropdown-menu dropdown-menu-end"
                   aria-labelledby="navbarDropdownMenuLink">
                   <li>
-                    <a className="dropdown-item" href="#">
+                    <a className="dropdo>
                       My profile
                     </a>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">
+                    <a className="dropdo>
                       Settings
                     </a>
                   </li>
