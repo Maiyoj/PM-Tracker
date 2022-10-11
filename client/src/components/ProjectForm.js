@@ -43,7 +43,6 @@ function ProjectForm({getTickets}) {
       .then((res) => res.json())
       .then((newTicket) => {
         getTickets(newTicket)
-        console.log(ticketData)
         setTickets({
           ...ticketData,
           project_id: "",
@@ -53,7 +52,7 @@ function ProjectForm({getTickets}) {
           category: "",
           status: "",
           comment: "",
-          user_id: "",
+          user_id: ""
         });
       });
   }

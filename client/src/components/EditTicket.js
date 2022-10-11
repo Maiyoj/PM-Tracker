@@ -1,6 +1,6 @@
 import { Fragment, useState, useEffect } from "react";
-import {useParams} from "react-router-dom"
-function EditTicket({handleUpdateTicket, id, }) {
+import { useParams } from "react-router-dom";
+function EditTicket({ handleUpdateTicket }) {
   let params = useParams();
   // get projects
   const [projects, setProject] = useState([]);
@@ -44,9 +44,8 @@ function EditTicket({handleUpdateTicket, id, }) {
     })
       .then((res) => res.json())
       .then((newTicket) => {
-       handleUpdateTicket (newTicket);
+        handleUpdateTicket(newTicket);
         setTickets({
-          ...ticketData,
           project_id: "",
           description: "",
           priority: "",
@@ -54,7 +53,7 @@ function EditTicket({handleUpdateTicket, id, }) {
           category: "",
           status: "",
           comment: "",
-          user_id: "",
+          user_id: ""
         });
       });
   }
@@ -175,10 +174,9 @@ function EditTicket({handleUpdateTicket, id, }) {
             </select>
             <button
               type="submit"
-              value="save"
               className="btn btn-primary mt-2"
-              onSubmit={handleSubmit}>
-              Submit
+              onClick={handleSubmit}>
+              Update
             </button>
           </form>
         </div>

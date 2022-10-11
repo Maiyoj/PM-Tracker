@@ -7,4 +7,4 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 #create ADmin user
-User.create(name: "Tiny Jane", email: "tiny@jane", password:"12345678", password_confirmation: "12345678", admin: true)
+User.create(name: "Tiny Jane", email: "tiny@jane", password:"12345678", admin: true)
