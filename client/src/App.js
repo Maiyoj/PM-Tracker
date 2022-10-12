@@ -30,7 +30,6 @@ function App() {
         <Route exact path="/clients" element={<Client />} />
         <Route exact path="/projects/:id" element={<EditTicket />} />
         <Route exact path="/clientsprojects" element={<ClientsProjects />} />
-
       </Routes>
     </div>
   );

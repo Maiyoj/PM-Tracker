@@ -1,11 +1,12 @@
 import { Fragment, useEffect, useState } from "react";
 import ProjectForm from "./ProjectForm";
 import EditTicket from "./EditTicket";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 function Project() {
   const [tickets, setTickets] = useState([]);
   const [isAdding, setIsAdding] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
+  
   useEffect(() => {
     fetch("/tickets")
       .then((res) => res.json())
@@ -28,6 +29,23 @@ function Project() {
     });
     setTickets(updatedTicks);
   }
+ 
+  // function handleDelete(handleDeleteClick) {
+  //   const updateDeleteTicket = tickets.filter(
+  //     (ticket) => ticket.id !== handleDeleteClick.id
+  //   );
+
+  //   setTickets(updateDeleteTicket);
+  // }
+  //  function handleDeleteClick(handleDelete){
+  //   fetch(`/tickets/${ticket.id}`, {
+  //     method: "DELETE",
+  
+  //   })
+  //   .then((res) => res.json())
+  //   .then((ticket) => handleDelete(ticket))
+  // }
+  
 
   return (
     <Fragment>
@@ -102,7 +120,7 @@ function Project() {
 
                         <button
                           type="button"
-                          // onClick={handleDeleteClick(ticket.id)}
+                          // onClick={handleDeleteClick}
                           className="btn btn-link btn-sm btn-rounded text-danger">
                           Delete
                         </button>
