@@ -30,6 +30,10 @@ function Project() {
     setTickets(updatedTicks);
   }
 
+  function handleDelete(id) {
+    const deleteUpdate = tickets.filter((ticket) => ticket.id !== id);
+    setTickets(deleteUpdate);
+  }
   return (
     <Fragment>
       <main style={{ marginTop: "58px" }}>
@@ -45,6 +49,7 @@ function Project() {
           <SingleProject
             tickets={tickets}
             handleUpdateTicket={handleUpdateTicket}
+            ondelete={handleDelete}
           />
         </div>
       </main>

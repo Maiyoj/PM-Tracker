@@ -2,8 +2,16 @@ import { Fragment, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import EditTicket from "./EditTicket";
 
-function SingleProject({ tickets, handleUpdateTicket }) {
+function SingleProject({ tickets, handleUpdateTicket, ondelete }) {
   const [isEditing, setIsEditing] = useState(false);
+
+  function handleDeleteClick(id) {
+    fetch(`/tickets/${id}`, {
+      method: "DELETE",
+    });
+    ondelete(id);
+  }
+
   return (
     <Fragment>
       {isEditing ? (
@@ -65,7 +73,7 @@ function SingleProject({ tickets, handleUpdateTicket }) {
 
                     <button
                       type="button"
-                      // onClick={handleDeleteClick}
+                      onClick={()=>handleDeleteClick(ticket.id)}
                       className="btn btn-link btn-sm btn-rounded text-danger">
                       Delete
                     </button>
