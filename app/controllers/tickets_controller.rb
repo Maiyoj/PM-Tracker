@@ -1,22 +1,6 @@
 class TicketsController < ApplicationController
   before_action :set_ticket, only: %i[ show update destroy ]
   skip_before_action :authorize, only: [:create, :index, :show, :update, :destroy]
-
-  def create
-    user = User.find_by(username: params[:username])
-    if user&.authenticate(params[:password])
-      session[:user_id] = user.id
-      render json: user
-    else
-      render json: { errors: ["Invalid username or password"] }, status: :unauthorized
-    end
-  end
-
-  def destroy
-    session.delete :user_id
-    head :no_content
-  end
-
   # GET /tickets
   def index
     @tickets = Ticket.includes(:user, :project)

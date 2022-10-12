@@ -34,6 +34,7 @@ function Project() {
     const deleteUpdate = tickets.filter((ticket) => ticket.id !== id);
     setTickets(deleteUpdate);
   }
+
   return (
     <Fragment>
       <main style={{ marginTop: "58px" }}>
