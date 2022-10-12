@@ -2,6 +2,7 @@ import { Fragment, useEffect, useState } from "react";
 import CreateProject from "./CreateProject";
 function ClientsProjects() {
   const [projects, setProject] = useState([]);
+  const [isAdding, setIsAdding] = useState(false);
   useEffect(() => {
     fetch("/projects")
       .then((r) => r.json())
@@ -20,7 +21,13 @@ function ClientsProjects() {
       <main style={{ marginTop: "58px" }}>
         <div className="container pt-4">
           <div className="container pt-4">
-            <CreateProject getProjects={getProjects} />
+            <button
+              type="button"
+              onClick={() => setIsAdding((isAdding) => !isAdding)}
+              className="btn btn-primary ms-8 my-2">
+              Create Projects
+            </button>
+            {isAdding ? <CreateProject getProjects={getProjects} /> : null}
             <table className="table align-middle mb-0 bg-white table-bordered">
               <thead className="bg-primary text-white">
                 <tr>
