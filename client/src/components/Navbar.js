@@ -32,7 +32,7 @@ function Navbar({ user, setUser }) {
               </Link>
               <Link
                 className="list-group-item list-group-item-action py-2 ripple"
-                to={"/users"}
+                to={"/clients"}
                 exact="true">
                 <i className="fas fa-building fa-fw me-3"></i>
                 <span>Clients</span>

@@ -1,31 +1,19 @@
-import { Fragments, useEffect } from "react";
-import { useEffec, useState } from "react";
-function SignUp() {
-  const [user, setUser] = useState([]);
-  // useEffect(() => {
-  //   fetch("/users")
-  //   .then(r => r.json())
-  //   .then((user)=>{
-  //     setUser(user)
-  //   })
-  // });
+import { Fragment, useEffect, useState } from "react";
 
-  
-  
+function ClientsProjectsForm() {
   return (
     <Fragment>
-      <div className="container">
-        <div className="row g-3">
-          <h1>LoginForm</h1>
-          <form>
+      <div className="container w-50 mt-4 card card-body py-5 px-md-5">
+        <div className="row">
+          <h1>Create User</h1>
+          <form className="w-60">
             <div className="mb-3">
               <label className="form-label">Name</label>
               <input
                 className="form-control"
-                id="exampleInputName"
                 aria-describedby="emailHelp"
                 name="name"
-                value={formData.name}
+                value={signInData.name}
                 onChange={onChangeValue}
               />
               <div id="emailHelp" className="form-text">
@@ -37,10 +25,9 @@ function SignUp() {
               <input
                 type="email"
                 className="form-control"
-                id="exampleInputEmail1"
                 aria-describedby="emailHelp"
                 name="email"
-                value={formData.email}
+                value={signInData.email}
                 onChange={onChangeValue}
               />
               <div id="emailHelp" className="form-text">
@@ -52,9 +39,8 @@ function SignUp() {
               <input
                 type="password"
                 className="form-control"
-                id="exampleInputPassword1"
                 name="password"
-                value={formData.password}
+                value={signInData.password}
                 onChange={onChangeValue}
               />
             </div>
@@ -70,4 +56,4 @@ function SignUp() {
     </Fragment>
   );
 }
-export default SignUp;
+export default ClientsProjectsForm;
