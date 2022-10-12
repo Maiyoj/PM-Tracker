@@ -16,9 +16,9 @@ function Client() {
             <table className="table align-middle mb-0 bg-white table-bordered">
               <thead className="bg-primary text-white">
                 <tr>
-                  <th>Project Name</th>
-                  <th>Description</th>
-                  <th>Client</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -33,9 +33,13 @@ function Client() {
                       </td>
 
                       <td>
+                      <button
+                          type="button"
+                          className="btn btn-link btn-sm btn-rounded text-primary">
+                          Edit
+                        </button>
                         <button
                           type="button"
-                          // onClick={handleDeleteClick(ticket.id)}
                           className="btn btn-link btn-sm btn-rounded text-danger">
                           Delete
                         </button>

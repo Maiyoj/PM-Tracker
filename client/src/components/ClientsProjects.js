@@ -18,7 +18,7 @@ function ClientsProjects() {
                 <tr>
                   <th>Project Name</th>
                   <th>Description</th>
-                  <th>Client</th>
+                  <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -33,9 +33,13 @@ function ClientsProjects() {
                       </td>
 
                       <td>
+                      <button
+                          type="button"
+                          className="btn btn-link btn-sm btn-rounded text-primary">
+                          Edit
+                        </button>
                         <button
                           type="button"
-                          // onClick={handleDeleteClick(ticket.id)}
                           className="btn btn-link btn-sm btn-rounded text-danger">
                           Delete
                         </button>
