@@ -6,6 +6,7 @@ import User from "./components/User";
 import Main from "./components/Main";
 import Project from "./components/Project";
 import EditTicket from "./components/EditTicket";
+import ClientsProjects from "./components/ClientsProjects";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -26,6 +27,8 @@ function App() {
         <Route exact path="/users" element={<User />} />
         <Route exact path="/projects" element={<Project />} />
         <Route exact path="/projects/:id" element={<EditTicket />} />
+        <Route exact path="/clientsprojects" element={<ClientsProjects />} />
+
       </Routes>
     </div>
   );

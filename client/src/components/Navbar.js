@@ -23,10 +23,13 @@ function Navbar({ user, setUser }) {
                 <i className="fas fa-tachometer-alt fa-fw me-3"></i>
                 <span>Main dashboard</span>
               </Link>
-              <a className="list-group-item list-group-item-action py-2 ripple">
+              <Link
+                className="list-group-item list-group-item-action py-2 ripple"
+                to={"/clientsprojects"}
+                exact="true">
                 <i className="fas fa-chart-line fa-fw me-3"></i>
                 <span>Projects</span>
-              </a>
+              </Link>
               <Link
                 className="list-group-item list-group-item-action py-2 ripple"
                 to={"/users"}
