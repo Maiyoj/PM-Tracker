@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :clients
   resources :tickets
   resources :projects
   resources :users, only:[:create, :show, :index]
