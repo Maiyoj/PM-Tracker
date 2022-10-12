@@ -1,7 +1,5 @@
 import { Fragment, useEffect, useState } from "react";
 import ProjectForm from "./ProjectForm";
-import EditTicket from "./EditTicket";
-import { Link } from "react-router-dom";
 import SingleProject from "./SingleProject";
 function Project() {
   const [tickets, setTickets] = useState([]);

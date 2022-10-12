@@ -1,5 +1,7 @@
 import { Fragment, useEffect, useState } from "react";
+import CreateClient from "./CreateClient";
 function Client() {
+  const [isAdding, setIsAdding] = useState(false);
   const [clients, setClient] = useState([]);
   useEffect(() => {
     fetch("/clients")
@@ -8,11 +10,22 @@ function Client() {
         setClient(clients);
       });
   });
+  function getClients(newClients) {
+    const updateClient = [...clients, newClients];
+    setClient(updateClient);
+  }
   return (
     <Fragment>
       <main style={{ marginTop: "58px" }}>
         <div className="container pt-4">
           <div className="container pt-4">
+          <button
+              type="button"
+              onClick={() => setIsAdding((isAdding) => !isAdding)}
+              className="btn btn-primary ms-8 my-2">
+              Create Client
+            </button>
+            {isAdding ? <CreateClient getClients={getClients} /> : null}
             <table className="table align-middle mb-0 bg-white table-bordered">
               <thead className="bg-primary text-white">
                 <tr>
