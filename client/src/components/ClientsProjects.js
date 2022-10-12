@@ -7,7 +7,7 @@ function ClientsProjects() {
       .then((project) => {
         setProject(project);
       });
-  });
+  },[]);
   return (
     <Fragment>
       <main style={{ marginTop: "58px" }}>
