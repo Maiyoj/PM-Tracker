@@ -23,8 +23,7 @@ function Navbar({ user, setUser }) {
                 <i className="fas fa-tachometer-alt fa-fw me-3"></i>
                 <span>Main dashboard</span>
               </Link>
-              <a
-                className="list-group-item list-group-item-action py-2 ripple">
+              <a className="list-group-item list-group-item-action py-2 ripple">
                 <i className="fas fa-chart-line fa-fw me-3"></i>
                 <span>Projects</span>
               </a>
@@ -61,7 +60,7 @@ function Navbar({ user, setUser }) {
 
         <nav
           id="main-navbar"
-          className="navbar navbar-expand-lg navbar-light bg-primary text-white fixed-top">
+          className="navbar navbar-expand-lg navbar-light bg-primary  fixed-top">
           <div className="container-fluid">
             <button
               className="navbar-toggler"
@@ -115,7 +114,6 @@ function Navbar({ user, setUser }) {
                   role="button"
                   data-mdb-toggle="dropdown"
                   aria-expanded="false">
-                  
                   <img
                     src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg"
                     className="rounded-circle "
@@ -128,14 +126,10 @@ function Navbar({ user, setUser }) {
                   className="dropdown-menu dropdown-menu-end"
                   aria-labelledby="navbarDropdownMenuLink">
                   <li>
-                    <a className="dropdo>
-                      My profile
-                    </a>
+                    <a className="dropdown-item">My profile</a>
                   </li>
                   <li>
-                    <a className="dropdo>
-                      Settings
-                    </a>
+                    <a className="dropdown-item">Settings</a>
                   </li>
                   <li>
                     <a className="dropdown-item" onClick={handleLogoutClick}>

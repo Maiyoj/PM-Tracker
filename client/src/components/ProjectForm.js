@@ -23,7 +23,7 @@ function ProjectForm({getTickets}) {
   function handleSubmit(e) {
     e.preventDefault();
     const createdTickets = {
-      project_id: ticketData.user_id,
+      project_id: ticketData.project_id,
       description: ticketData.description,
       priority: ticketData.priority,
       enviroment: ticketData.enviroment,
@@ -84,7 +84,6 @@ function ProjectForm({getTickets}) {
               className="form-select"
               aria-label="Default select example"
               name="project_id"
-              // value={project.id}
               onChange={onDataChange}>
               {projects.map((project) => (
                 <option key={project.id} value={project.id}>
@@ -107,7 +106,7 @@ function ProjectForm({getTickets}) {
               <textarea
                 className="form-control"
                 id="textAreaExample"
-                rows="4"
+                rows="1"
                 name="priority"
                 value={ticketData.priority}
                 onChange={onDataChange}></textarea>

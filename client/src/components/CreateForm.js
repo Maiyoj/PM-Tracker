@@ -1,57 +1,56 @@
 import { Fragment, useState } from "react";
-function LoginForm({ onLogin }) {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-  });
-  const [errors, setErrors] = useState([]);
-
-  // handleonchangedata
-  function onChangeValue(e) {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  }
-
-  //   handle submitted data
-  function handleSubmit(e) {
-    e.preventDefault();
-    const logInUser = {
-      name: formData.name,
-      email: formData.email,
-      password: formData.password,
-    };
-
-    fetch("/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(logInUser),
-    }).then((r) => {
-      if (r.ok) {
-        r.json().then((user) => {
-          onLogin(user);
-          setFormData({
-            ...formData,
-            name: "",
-            email: "",
-            password: "",
-          });
+function CreateForm({onSignIn}) {
+    const [signInData, setSignInData] = useState({
+        name: "",
+        email: "",
+        password: "",
+      });
+      const [errors, setErrors] = useState([]);
+    
+      // handleonchangedata
+      function onChangeValue(e) {
+        setSignInData({
+          ...signInData,
+          [e.target.name]: e.target.value,
         });
-      } else {
-        r.json().then((err) => setErrors(err.errors));
       }
-    });
-  }
-
+    
+      //   handle submitted data
+      function handleSubmit(e) {
+        e.preventDefault();
+        const signInUser = {
+          name: signInData.name,
+          email: signInData.email,
+          password: signInData.password,
+        };
+    
+        fetch("/users", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(signInUser),
+        }).then((r) => {
+          if (r.ok) {
+            r.json().then((user) => {
+              onSignIn(user);
+              setSignInData({
+                ...signInData,
+                name: "",
+                email: "",
+                password: "",
+              });
+            });
+          } else {
+            r.json().then((err) => setErrors(err.errors));
+          }
+        });
+      }
   return (
     <Fragment>
       <div className="container w-50 mt-4 card card-body py-5 px-md-5">
         <div className="row">
-          <h1>LoginForm</h1>
+          <h1>Create User</h1>
           <form className="w-60">
             <div className="mb-3">
               <label className="form-label">Name</label>
@@ -59,7 +58,7 @@ function LoginForm({ onLogin }) {
                 className="form-control"
                 aria-describedby="emailHelp"
                 name="name"
-                value={formData.name}
+                value={signInData.name}
                 onChange={onChangeValue}
               />
               <div id="emailHelp" className="form-text">
@@ -73,7 +72,7 @@ function LoginForm({ onLogin }) {
                 className="form-control"
                 aria-describedby="emailHelp"
                 name="email"
-                value={formData.email}
+                value={signInData.email}
                 onChange={onChangeValue}
               />
               <div id="emailHelp" className="form-text">
@@ -86,7 +85,7 @@ function LoginForm({ onLogin }) {
                 type="password"
                 className="form-control"
                 name="password"
-                value={formData.password}
+                value={signInData.password}
                 onChange={onChangeValue}
               />
             </div>
@@ -96,15 +95,10 @@ function LoginForm({ onLogin }) {
               className="btn btn-primary">
               Submit
             </button>
-            <div className="bg-danger  w-5 mt-2">
-              {errors.map((err) => (
-                <p key={err}>{err}</p>
-              ))}
-            </div>
           </form>
         </div>
       </div>
     </Fragment>
   );
 }
-export default LoginForm;
+export default CreateForm;

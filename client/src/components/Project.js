@@ -29,18 +29,6 @@ function Project() {
     setTickets(updatedTicks);
   }
 
-  // // Delete Function
-  // function handleDeleteClick(id) {
-  //   fetch(`/tickets/${id}`, {
-  //     method: "DELETE",
-  //   })
-  //  const updatedTickets = tickets.filter(
-  //   (ticket) => ticket.id !== id
-  // );
-  // setTickets(updatedTickets);
-
-  // }
-
   return (
     <Fragment>
       <main style={{ marginTop: "58px" }}>
@@ -58,7 +46,7 @@ function Project() {
 
           <div className="container pt-4">
             <table className="table align-middle mb-0 bg-white table-bordered">
-              <thead className="bg-secondary text-white">
+              <thead className="bg-primary text-white">
                 <tr>
                   <th>Description</th>
                   <th>Project Name</th>

@@ -12,12 +12,10 @@ function App() {
   useEffect(() => {
     fetch("/me").then((r) => {
       if (r.ok) {
-        r.json().then((user) =>
-         setUser(user));
-         console.log(user)
+        r.json().then((user) => setUser(user));
       }
     });
-  }, []);;
+  }, []);
 
   if (!user) return <LoginForm onLogin={setUser} />;
   return (

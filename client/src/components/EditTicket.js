@@ -44,8 +44,9 @@ function EditTicket({ handleUpdateTicket }) {
     })
       .then((res) => res.json())
       .then((newTicket) => {
-        handleUpdateTicket(newTicket);
+        handleUpdateTicket(newTicket)
         setTickets({
+          ...ticketData,
           project_id: "",
           description: "",
           priority: "",
