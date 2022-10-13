@@ -48,7 +48,7 @@ function CreateForm({ onSignIn }) {
   }
   return (
     <Fragment>
-      <div className="container w-50 mt-4 card card-body py-5 px-md-5">
+      {/* <div className="container w-50 mt-4 card card-body py-5 px-md-5">
         <div className="row">
           <h1>Create User</h1>
           <form className="w-60">
@@ -93,6 +93,51 @@ function CreateForm({ onSignIn }) {
               type="submit"
               onClick={handleSubmit}
               className="btn btn-primary">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div> */}
+      <div className="container">
+        <div className="row g-3">
+          <h1>Create User</h1>
+          <form className="border rounded-top p-3">
+            <div className="">
+              <label className="form-label">Name</label>
+              <textarea
+                className="form-control"
+                id="textAreaExample"
+                rows="1"
+                name="name"
+                value={signInData.name}
+                onChange={onChangeValue}></textarea>
+            </div>
+
+            <div className="">
+              <label className="form-label">Email</label>
+              <textarea
+                className="form-control"
+                id="textAreaExample"
+                rows="1"
+                name="email"
+                value={signInData.email}
+                onChange={onChangeValue}></textarea>
+            </div>
+            <div className="mb-3">
+              <label className="form-label">Password</label>
+              <input
+                type="password"
+                className="form-control"
+                name="password"
+                value={signInData.password}
+                onChange={onChangeValue}
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="btn btn-primary mt-2"
+              onClick={handleSubmit}>
               Submit
             </button>
           </form>
