@@ -8,4 +8,4 @@
 
 #create ADmin user
 
-User.create!(name: "admin", email: "admin@gmail.com", password: "12345678" ,admin: true)
+User.create!(name: "Valentine", email: "val@gmail.com", password: "12345678" ,admin: true)
