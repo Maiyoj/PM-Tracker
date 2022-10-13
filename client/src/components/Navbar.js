@@ -132,9 +132,6 @@ function Navbar({ user, setUser }) {
                     <span>My Profile</span>
                   </Link>
                   <li>
-                    <a className="dropdown-item">Settings</a>
-                  </li>
-                  <li>
                     <a className="dropdown-item" onClick={handleLogoutClick}>
                       Logout
                     </a>
