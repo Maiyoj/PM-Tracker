@@ -11,7 +11,7 @@ function User() {
       .then((user) => {
         setUsers(user);
       });
-  },[]);
+  }, []);
 
   function getUsers(newUsersCreated) {
     const updateUser = [...users, newUsersCreated];
@@ -68,10 +68,13 @@ function User() {
                     </td>
                     <td>Senior</td>
                     <td>
-                      <button
-                        type="button"
-                        className="btn btn-link btn-sm btn-rounded">
+                      <button type="button" className="btn btn-primary px-4">
                         Edit
+                      </button>
+                      <button
+                        type="btn btn-primary px-4"
+                        className="btn btn-danger px-2 ms-3">
+                        Delete
                       </button>
                     </td>
                   </tr>

@@ -48,14 +48,12 @@ function ClientsProjects() {
                       </td>
 
                       <td>
-                        <button
-                          type="button"
-                          className="btn btn-link btn-sm btn-rounded text-primary">
+                        <button type="button" className="btn btn-primary px-4 ">
                           Edit
                         </button>
                         <button
                           type="button"
-                          className="btn btn-link btn-sm btn-rounded text-danger">
+                          className="btn btn-danger px-2 ms-3">
                           Delete
                         </button>
                       </td>

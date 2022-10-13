@@ -15,7 +15,7 @@ function SingleProject({ tickets, handleUpdateTicket, ondelete }) {
   return (
     <Fragment>
       {isEditing ? (
-        <EditTicket handleUpdateTicket={handleUpdateTicket} tickets={tickets}/>
+        <EditTicket handleUpdateTicket={handleUpdateTicket} tickets={tickets} />
       ) : null}
       <div className="container pt-4">
         <table className="table align-middle mb-0 bg-white table-bordered">
@@ -68,13 +68,15 @@ function SingleProject({ tickets, handleUpdateTicket, ondelete }) {
                     <Link
                       to={`/projects/${ticket.id}`}
                       onClick={() => setIsEditing((isEditing) => !isEditing)}>
-                      Edit
+                      <button type="button" className="btn btn-primary px-4 ">
+                        Edit
+                      </button>
                     </Link>
 
                     <button
                       type="button"
                       onClick={() => handleDeleteClick(ticket.id)}
-                      className="btn btn-link btn-sm btn-rounded text-danger">
+                      className="btn btn-danger px-2 ms-3 ">
                       Delete
                     </button>
                   </td>

@@ -9,7 +9,7 @@ function Client() {
       .then((clients) => {
         setClient(clients);
       });
-  },[]);
+  }, []);
   function getClients(newClients) {
     const updateClient = [...clients, newClients];
     setClient(updateClient);
@@ -19,7 +19,7 @@ function Client() {
       <main style={{ marginTop: "58px" }}>
         <div className="container pt-4">
           <div className="container pt-4">
-          <button
+            <button
               type="button"
               onClick={() => setIsAdding((isAdding) => !isAdding)}
               className="btn btn-primary ms-8 my-2">
@@ -46,14 +46,12 @@ function Client() {
                       </td>
 
                       <td>
-                      <button
-                          type="button"
-                          className="btn btn-link btn-sm btn-rounded text-primary">
+                        <button type="button" className="btn btn-primary px-4">
                           Edit
                         </button>
                         <button
-                          type="button"
-                          className="btn btn-link btn-sm btn-rounded text-danger">
+                          type="btn btn-primary px-4"
+                          className="btn btn-danger px-2 ms-3">
                           Delete
                         </button>
                       </td>
