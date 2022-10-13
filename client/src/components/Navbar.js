@@ -38,12 +38,14 @@ function Navbar({ user, setUser }) {
                 <span>Clients</span>
               </Link>
 
-              <a
-                href="#"
-                className="list-group-item list-group-item-action py-2 ripple">
-                <i className="fas fa-calendar fa-fw me-3"></i>
-                <span>Calendar</span>
-              </a>
+              <Link
+                className="list-group-item list-group-item-action py-2 ripple"
+                to={"/calendar"}
+                exact="true">
+                <i className=" fas fa-calendar fa-fw me-3"></i>
+                <span>calendar</span>
+              </Link>
+            
               <Link
                 className="list-group-item list-group-item-action py-2 ripple"
                 to={"/users"}

@@ -9,6 +9,8 @@ import EditTicket from "./components/EditTicket";
 import ClientsProjects from "./components/ClientsProjects";
 import Client from "./components/Client";
 import Profile from "./components/Profile";
+import AppCs from "./components/AppCs";
+
 
 function App() {
   const [user, setUser] = useState(null);
@@ -32,6 +34,7 @@ function App() {
         <Route exact path="/clients" element={<Client />} />
         <Route exact path="/projects/:id" element={<EditTicket />} />
         <Route exact path="/clientsprojects" element={<ClientsProjects />} />
+        <Route exact path="/calendar" element={<AppCs />} />
       </Routes>
     </div>
   );
