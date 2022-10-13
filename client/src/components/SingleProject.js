@@ -15,7 +15,7 @@ function SingleProject({ tickets, handleUpdateTicket, ondelete }) {
   return (
     <Fragment>
       {isEditing ? (
-        <EditTicket handleUpdateTicket={handleUpdateTicket} />
+        <EditTicket handleUpdateTicket={handleUpdateTicket} tickets={tickets}/>
       ) : null}
       <div className="container pt-4">
         <table className="table align-middle mb-0 bg-white table-bordered">

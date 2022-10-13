@@ -11,7 +11,6 @@ function Navbar({ user, setUser }) {
   return (
     <Fragment>
       <header>
-        
         <nav
           id="sidebarMenu"
           className="collapse d-lg-block sidebar collapse bg-white">
@@ -129,9 +128,9 @@ function Navbar({ user, setUser }) {
                 <ul
                   className="dropdown-menu dropdown-menu-end"
                   aria-labelledby="navbarDropdownMenuLink">
-                  <li>
-                    <a className="dropdown-item">My profile</a>
-                  </li>
+                  <Link to={"/profile"} className=" dropdown-item">
+                    <span>My Profile</span>
+                  </Link>
                   <li>
                     <a className="dropdown-item">Settings</a>
                   </li>

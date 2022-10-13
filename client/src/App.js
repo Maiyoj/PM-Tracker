@@ -8,6 +8,7 @@ import Project from "./components/Project";
 import EditTicket from "./components/EditTicket";
 import ClientsProjects from "./components/ClientsProjects";
 import Client from "./components/Client";
+import Profile from "./components/Profile";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -26,7 +27,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Main user={user} />} />
         <Route exact path="/users" element={<User />} />
-          <Route exact path="/users" element={<User />} />
+        <Route exact path="/profile" element={<Profile  user={user}/>} />
         <Route exact path="/projects" element={<Project />} />
         <Route exact path="/clients" element={<Client />} />
         <Route exact path="/projects/:id" element={<EditTicket />} />

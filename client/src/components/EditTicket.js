@@ -1,6 +1,6 @@
 import { Fragment, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-function EditTicket({ handleUpdateTicket }) {
+function EditTicket({ handleUpdateTicket, tickets }) {
   let params = useParams();
   // get projects
   const [projects, setProject] = useState([]);
@@ -44,7 +44,7 @@ function EditTicket({ handleUpdateTicket }) {
     })
       .then((res) => res.json())
       .then((newTicket) => {
-        handleUpdateTicket(newTicket)
+        handleUpdateTicket(newTicket);
         setTickets({
           ...ticketData,
           project_id: "",
@@ -54,7 +54,7 @@ function EditTicket({ handleUpdateTicket }) {
           category: "",
           status: "",
           comment: "",
-          user_id: ""
+          user_id: "",
         });
       });
   }
@@ -86,7 +86,6 @@ function EditTicket({ handleUpdateTicket }) {
               className="form-select"
               aria-label="Default select example"
               name="project_id"
-              // value={project.id}
               onChange={onDataChange}>
               {projects.map((project) => (
                 <option key={project.id} value={project.id}>
