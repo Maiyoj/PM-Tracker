@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :clients
   resources :tickets
   resources :projects
-  resources :users, only:[:create, :show, :index]
+  resources :users, only:[:create, :show, :index, :destroy]
   get "/me", to: "users#show"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"

@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useState } from "react";
-function ProjectForm({getTickets}) {
+function ProjectForm({ getTickets }) {
   // get projects
   const [projects, setProject] = useState([]);
   const [users, setUsers] = useState([]);
@@ -42,7 +42,7 @@ function ProjectForm({getTickets}) {
     })
       .then((res) => res.json())
       .then((newTicket) => {
-        getTickets(newTicket)
+        getTickets(newTicket);
         setTickets({
           ...ticketData,
           project_id: "",
@@ -52,7 +52,7 @@ function ProjectForm({getTickets}) {
           category: "",
           status: "",
           comment: "",
-          user_id: ""
+          user_id: "",
         });
       });
   }
@@ -162,10 +162,9 @@ function ProjectForm({getTickets}) {
               className="form-select"
               aria-label="Default select example"
               name="user_id"
-              value={ticketData.user_id}
               onChange={onDataChange}>
               {users.map((user) => (
-                <option key={user.id} value={user.id} >
+                <option key={user.id} value={user.id}>
                   {user.name}
                 </option>
               ))}

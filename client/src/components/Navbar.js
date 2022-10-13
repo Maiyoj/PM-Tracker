@@ -11,6 +11,7 @@ function Navbar({ user, setUser }) {
   return (
     <Fragment>
       <header>
+        
         <nav
           id="sidebarMenu"
           className="collapse d-lg-block sidebar collapse bg-white">

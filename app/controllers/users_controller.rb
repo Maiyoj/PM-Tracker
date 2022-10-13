@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: %i[ show update destroy ]
   skip_before_action :authorize, only: [:create, :index, :show, :update, :destroy]
 
   def index
@@ -17,6 +18,9 @@ def show
     render json: user
 end
 
+def destroy
+  @user.destroy
+end
 
   
 
@@ -26,6 +30,9 @@ end
       params.permit(:name, :email, :password)
   end
 
+  def set_user
+    @user = User.find(params[:id])
+  end
 
 
 end

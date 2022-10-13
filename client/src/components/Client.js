@@ -9,7 +9,7 @@ function Client() {
       .then((clients) => {
         setClient(clients);
       });
-  });
+  },[]);
   function getClients(newClients) {
     const updateClient = [...clients, newClients];
     setClient(updateClient);

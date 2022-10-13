@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useState } from "react";
 function CreateProject({ getProjects }) {
   // get clients
-  const [clients, setClients] = useState([])
+  const [clients, setClients] = useState([]);
   const [clientProjects, setProjects] = useState({
     projectname: "",
     description: "",
@@ -76,16 +76,14 @@ function CreateProject({ getProjects }) {
                 value={clientProjects.description}
                 onChange={onDataChange}></textarea>
             </div>
-
+            <label className="form-label">Client</label>
             <select
               className="form-select"
               aria-label="Default select example"
               name="client_id"
               onChange={onDataChange}>
               {clients.map((client) => (
-                <option value={client.id}>
-                  {client.name}
-                </option>
+                <option value={client.id}>{client.name}</option>
               ))}
             </select>
             <button

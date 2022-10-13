@@ -51,7 +51,7 @@ function LoginForm({ onLogin }) {
     <Fragment>
       <div className="container w-50 mt-4 card card-body py-5 px-md-5">
         <div className="row">
-          <h1>LoginForm</h1>
+          <h1 className="text-center">Login</h1>
           <form className="w-60">
             <div className="mb-3">
               <label className="form-label">Name</label>

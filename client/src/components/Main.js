@@ -1,10 +1,11 @@
 import { Fragment } from "react";
 
-function Main() {
+function Main({ user }) {
   return (
     <Fragment>
       <main style={{ marginTop: "58px" }}>
         <div className="container pt-4">
+          <p className=" h-25 fs-1 text-dark fw-bold w-25">Welcome {user.name}</p>
           <section className="mb-4">
             <div className="card">
               <div className="card-header text-center py-3">
@@ -117,7 +118,7 @@ function Main() {
                       </div>
                       <div className="text-end">
                         <h3>278</h3>
-                        <p className="mb-0">New Posts</p>
+                        <p className="mb-0">New Tickets</p>
                       </div>
                     </div>
                   </div>
@@ -358,8 +359,8 @@ function Main() {
                           <i className="fas fa-pencil-alt text-info fa-3x me-4"></i>
                         </div>
                         <div>
-                          <h4>Total Posts</h4>
-                          <p className="mb-0">Monthly blog posts</p>
+                          <h4>Total Tickets</h4>
+                          <p className="mb-0">Monthly Tickets</p>
                         </div>
                       </div>
                       <div className="align-self-center">
