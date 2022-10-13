@@ -24,8 +24,9 @@ function App() {
     <div>
       <Navbar user={user} setUser={setUser} />
       <Routes>
-        <Route exact path="/" element={<Project />} />
+        <Route exact path="/" element={<Main />} />
         <Route exact path="/users" element={<User />} />
+          <Route exact path="/users" element={<User />} />
         <Route exact path="/projects" element={<Project />} />
         <Route exact path="/clients" element={<Client />} />
         <Route exact path="/projects/:id" element={<EditTicket />} />

@@ -73,7 +73,7 @@ function SingleProject({ tickets, handleUpdateTicket, ondelete }) {
 
                     <button
                       type="button"
-                      onClick={()=>handleDeleteClick(ticket.id)}
+                      onClick={() => handleDeleteClick(ticket.id)}
                       className="btn btn-link btn-sm btn-rounded text-danger">
                       Delete
                     </button>
