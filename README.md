@@ -57,6 +57,7 @@ This software application, also known as a bug tracking system or defect trackin
 - Unzip the downloaded Folder
 - open the folder in an editor of choice
 - npm install --prefix client to install dependencies
+- bundle install 
 - run rails s to start the application
 
 ### Live Link
