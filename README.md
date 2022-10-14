@@ -37,7 +37,7 @@ This software application, also known as a bug tracking system or defect trackin
 - Admin user can create  project
 - Admin user can create  clients
 - Admin user can create  tickets
-- User can create  Ticket
+- User can view their own  Ticket
 - User updates Ticket
 
 ### Requirements/Installation
@@ -67,7 +67,7 @@ https://khub-tracker.herokuapp.com/
 
 - React js - which was used to create the user Interface.
 - Boostrap - which was used to style the User Interface.
-- Ruby on Rails  - Used in creating a rails API 
+- Ruby on Rails  - Used in creating a rails API  
 
 ## Known Bugs
 
